@@ -13,7 +13,8 @@ FSW5 - Barber
 - [Prisma](https://www.prisma.io/) - Alternatives: ([Drizzle](https://orm.drizzle.team/) - [Kysely](https://kysely.dev/))
 - [Docker](https://www.docker.com/) - Alternatives: ([Neon DB](https://neon.tech/), [Supabase](https://supabase.com/), [Vercel Postgres](https://vercel.com/docs/storage/vercel-postgres))
 - [Docker Hub](https://hub.docker.com/)
-- [Tailwind]()
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Prettier Plugin Tailwindcss](https://github.com/tailwindlabs/prettier-plugin-tailwindcss)
 - [Shadcn]()
 - [Git](https://git-scm.com/) - [Github](https://github.com/) - [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 - [Git Hooks]()
@@ -30,6 +31,7 @@ Install the dependencies:
 ```sh
 npm i prisma -D
 npm i ts-node -D
+npm i -D prettier prettier-plugin-tailwindcss
 ```
 
 Creating the Prisma Schema file: 
@@ -62,9 +64,9 @@ Create the project:
 ### Part 0
 
 - [x] Database setup
-- [ ] Database seeding
-- [ ] Next.js Introduction
-- [ ] Tailwind
+- [x] Database seeding
+- [x] Next.js Introduction
+- [x] Tailwind
 - [ ] Shadcn
 - [ ] Git hooks
 
