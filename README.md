@@ -17,7 +17,7 @@ FSW5 - Barber
 - [Prettier Plugin Tailwindcss](https://github.com/tailwindlabs/prettier-plugin-tailwindcss)
 - [Shadcn](https://ui.shadcn.com/)
 - [Git](https://git-scm.com/) - [Github](https://github.com/) - [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
-- [Git Hooks]()
+- [Husky](https://github.com/typicode/husky#readme) - Git Hooks
 
 
 ## Project
@@ -32,6 +32,7 @@ Install the dependencies:
 npm i prisma -D
 npm i ts-node -D
 npm i -D prettier prettier-plugin-tailwindcss
+npm i -D husky lint-staged
 ```
 
 Creating the Prisma Schema file: 
@@ -60,6 +61,11 @@ npx shadcn-ui@latest add button
 
 ```
 
+Create the Husky setup:
+```sh
+npx husky init
+```
+
 Start the project:
 ```sh
 npm run dev
@@ -75,7 +81,7 @@ npm run dev
 - [x] Next.js Introduction
 - [x] Tailwind
 - [x] Shadcn
-- [ ] Git hooks
+- [x] Git hooks
 
 ### Part 1
 
