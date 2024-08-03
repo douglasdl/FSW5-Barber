@@ -29,6 +29,7 @@ npx create-next-app@latest web
 Install the dependencies:
 ```sh
 npm i prisma -D
+npm i ts-node -D
 ```
 
 Creating the Prisma Schema file: 
@@ -41,6 +42,11 @@ Generate the database tables in the postgresql database:
 npx prisma migrate dev --name init_db
 ```
 
+Seed the database:
+```sh
+npx prisma db seed
+```
+
 Start the project:
 ```sh
 
@@ -50,3 +56,24 @@ Create the project:
 ```sh
 
 ```
+
+## Contents
+
+### Part 0
+
+- [x] Database setup
+- [ ] Database seeding
+- [ ] Next.js Introduction
+- [ ] Tailwind
+- [ ] Shadcn
+- [ ] Git hooks
+
+### Part 1
+
+### Part 2
+
+### Part 3
+
+### Part 4
+
+### Part 5
