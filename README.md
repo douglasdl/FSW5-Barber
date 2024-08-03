@@ -15,7 +15,7 @@ FSW5 - Barber
 - [Docker Hub](https://hub.docker.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Prettier Plugin Tailwindcss](https://github.com/tailwindlabs/prettier-plugin-tailwindcss)
-- [Shadcn]()
+- [Shadcn](https://ui.shadcn.com/)
 - [Git](https://git-scm.com/) - [Github](https://github.com/) - [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 - [Git Hooks]()
 
@@ -49,15 +49,22 @@ Seed the database:
 npx prisma db seed
 ```
 
+Setup the Chadcn in the project:
+```sh
+npx shadcn-ui@latest init
+```
+
+Install the Chadcn components:
+```sh
+npx shadcn-ui@latest add button
+
+```
+
 Start the project:
 ```sh
-
+npm run dev
 ```
 
-Create the project:
-```sh
-
-```
 
 ## Contents
 
@@ -67,7 +74,7 @@ Create the project:
 - [x] Database seeding
 - [x] Next.js Introduction
 - [x] Tailwind
-- [ ] Shadcn
+- [x] Shadcn
 - [ ] Git hooks
 
 ### Part 1
