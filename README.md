@@ -18,6 +18,7 @@ FSW5 - Barber
 - [Shadcn](https://ui.shadcn.com/)
 - [Git](https://git-scm.com/) - [Github](https://github.com/) - [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 - [Husky](https://github.com/typicode/husky#readme) - Git Hooks
+- [git-commit-msg-linter](https://www.npmjs.com/package/git-commit-msg-linter)
 
 
 ## Project
@@ -33,6 +34,7 @@ npm i prisma -D
 npm i ts-node -D
 npm i -D prettier prettier-plugin-tailwindcss
 npm i -D husky lint-staged
+npm i -D git-commit-msg-linter
 ```
 
 Creating the Prisma Schema file: 
