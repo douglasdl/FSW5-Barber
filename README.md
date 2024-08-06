@@ -64,6 +64,8 @@ Install the Chadcn components:
 npx shadcn-ui@latest add button
 npx shadcn-ui@latest add card
 npx shadcn-ui@latest add input
+npx shadcn-ui@latest add badge
+npx shadcn-ui@latest add avatar
 ```
 
 Create the Husky setup:
