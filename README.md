@@ -1,6 +1,8 @@
 # FSW5-Barber
 FSW5 - Barber
 
+- [Figma](https://www.figma.com/design/P5gHjuDEyp0ADnhD6GapAF/FSW-5.0?node-id=0-1&t=zAKXkwvPEszaEcxu-0)
+
 ## Environment
 
 - [Node.js]()
@@ -60,7 +62,8 @@ npx shadcn-ui@latest init
 Install the Chadcn components:
 ```sh
 npx shadcn-ui@latest add button
-
+npx shadcn-ui@latest add card
+npx shadcn-ui@latest add input
 ```
 
 Create the Husky setup:
