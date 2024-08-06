@@ -9,6 +9,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "./_components/ui/avatar";
 import { BarbershopItem } from "./_components/barbershop-item";
 import { db } from "./_lib/prisma";
 import { Footer } from "./_components/footer";
+import { quickSearchOptions } from "./_constants/search";
 
 export default async function Home() {
 
@@ -34,35 +35,14 @@ export default async function Home() {
         </div>
 
         <div className="flex gap-3 overflow-x-scroll [&::-webkit-scrollbar]:hidden">
-          <Button className="gap-2" variant="secondary">
-            <Image src="/hair-cut.svg" alt="Cabelo" width={16} height={16} />
-            Cabelo
-          </Button>
-
-          <Button className="gap-2" variant="secondary">
-            <Image src="/beard.svg" alt="Barba" width={16} height={16} />
-            Barba
-          </Button>
-
-          <Button className="gap-2" variant="secondary">
-            <Image src="/finish.svg" alt="Acabamento" width={16} height={16} />
-            Acabamento
-          </Button>
-
-          <Button className="gap-2" variant="secondary">
-            <Image src="/eyebrow.svg" alt="Sobrancelha" width={16} height={16} />
-            Sobrancelha
-          </Button>
-
-          <Button className="gap-2" variant="secondary">
-            <Image src="/massage.svg" alt="Massagem" width={16} height={16} />
-            Massagem
-          </Button>
-
-          <Button className="gap-2" variant="secondary">
-            <Image src="/hair-hydration.svg" alt="Hidratação" width={16} height={16} />
-            Hidratação
-          </Button>
+          {
+            quickSearchOptions.map(option => (
+              <Button className="gap-2" variant="secondary" key={option.title}>
+                <Image src={option.imageUrl} alt={option.title} width={16} height={16} />
+                {option.title}
+              </Button>
+            ))
+          }
         </div>
 
         <div className="relative w-full h-[150px]">
