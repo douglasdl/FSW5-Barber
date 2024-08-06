@@ -1,5 +1,3 @@
-"use client"
-
 import { SearchIcon } from "lucide-react";
 import { Header } from "./_components/header";
 import { Button } from "./_components/ui/button";
@@ -8,11 +6,13 @@ import Image from "next/image";
 import { Card, CardContent } from "./_components/ui/card";
 import { Badge } from "./_components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "./_components/ui/avatar";
+import { BarbershopItem } from "./_components/barbershop-item";
+import { db } from "./_lib/prisma";
 
-const name = 'test'
+export default async function Home() {
 
+  const barbershops = await db.barbershop.findMany({})
 
-export default function Home() {
   return (
     <div>
       <Header />
@@ -31,7 +31,8 @@ export default function Home() {
           <Image src="/banner-01.png" alt="Banner" fill className="object-cover rounded-xl" />
         </div>
 
-        <Card className="mt-6">
+        <h2 className="uppercase text-xs font-bold text-gray-400 mt-6 mb-3">Agendamentos</h2>
+        <Card>
           <CardContent className="flex justify-between p-0">
             <div className="flex flex-col gap-2 py-5 pl-5">
               <Badge className="w-fit">Confirmado</Badge>
@@ -52,6 +53,15 @@ export default function Home() {
             </div>
           </CardContent>
         </Card>
+
+        <h2 className="uppercase text-xs font-bold text-gray-400 mt-6 mb-3">Recomendados</h2>
+        <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden">
+          {
+            barbershops.map((barbershop) => (
+              <BarbershopItem key={barbershop.id} barbershop={barbershop} />
+            ))
+          }
+        </div>
       </div>
     </div>
   );

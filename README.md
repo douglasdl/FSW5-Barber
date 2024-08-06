@@ -8,6 +8,10 @@ FSW5 - Barber
 - [Node.js]()
 - [VS Code]()
 
+## VS Code Extensions
+
+- [Simple React Snippets](https://marketplace.visualstudio.com/items?itemName=burkeholland.simple-react-snippets)
+
 ## Technologies
 
 - [Next.js](https://nextjs.org/)
@@ -52,6 +56,11 @@ npx prisma migrate dev --name init_db
 Seed the database:
 ```sh
 npx prisma db seed
+```
+
+View the database:
+```sh
+npx prisma studio
 ```
 
 Setup the Chadcn in the project:
