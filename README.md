@@ -100,11 +100,16 @@ npm run dev
 - [x] Git hooks
 
 ### Part 1
+<!-- https://www.youtube.com/watch?app=desktop&v=moVcvu-P4vM -->
 
 ### Part 2
+<!-- https://www.youtube.com/watch?app=desktop&v=hFPecJrEQIY -->
 
 ### Part 3
+<!--  -->
 
 ### Part 4
+<!--  -->
 
 ### Part 5
+<!--  -->
