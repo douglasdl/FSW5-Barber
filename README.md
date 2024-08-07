@@ -75,6 +75,7 @@ npx shadcn-ui@latest add card
 npx shadcn-ui@latest add input
 npx shadcn-ui@latest add badge
 npx shadcn-ui@latest add avatar
+npx shadcn-ui@latest add sonner
 ```
 
 Create the Husky setup:
