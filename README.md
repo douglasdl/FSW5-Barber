@@ -25,7 +25,7 @@ FSW5 - Barber
 - [Git](https://git-scm.com/) - [Github](https://github.com/) - [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 - [Husky](https://github.com/typicode/husky#readme) - Git Hooks
 - [git-commit-msg-linter](https://www.npmjs.com/package/git-commit-msg-linter)
-
+- [NextAuth.js](https://next-auth.js.org/)
 
 ## Project
 
@@ -36,11 +36,15 @@ npx create-next-app@latest web
 
 Install the dependencies:
 ```sh
-npm i prisma -D
-npm i ts-node -D
+npm i -D prisma
+npm i -D prisma@latest
+npm i -D ts-node 
 npm i -D prettier prettier-plugin-tailwindcss
 npm i -D husky lint-staged
 npm i -D git-commit-msg-linter
+npm i @prisma/client@latest
+npm i next-auth
+npm i @auth/prisma-adapter
 ```
 
 Creating the Prisma Schema file: 
@@ -51,6 +55,7 @@ npx prisma init --datasource-provider postgresql
 Generate the database tables in the postgresql database:
 ```sh
 npx prisma migrate dev --name init_db
+npx prisma migrate dev --name add_auth_tables_google
 ```
 
 Seed the database:
@@ -62,6 +67,12 @@ View the database:
 ```sh
 npx prisma studio
 ```
+
+Formar the Prisma schema:
+```sh
+npx prisma format
+```
+
 
 Setup the Chadcn in the project:
 ```sh
@@ -77,6 +88,7 @@ npx shadcn-ui@latest add badge
 npx shadcn-ui@latest add avatar
 npx shadcn-ui@latest add sonner
 npx shadcn-ui@latest add sheet
+npx shadcn-ui@latest add dialog
 ```
 
 Create the Husky setup:
@@ -108,7 +120,7 @@ npm run dev
 <!-- https://www.youtube.com/watch?app=desktop&v=hFPecJrEQIY -->
 
 ### Part 3
-<!--  -->
+<!-- https://www.youtube.com/watch?app=desktop&v=aIWSXdFggJQ -->
 
 ### Part 4
 <!--  -->
