@@ -1,11 +1,8 @@
 import Image from "next/image";
-import { Card, CardContent, CardHeader } from "./ui/card";
+import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
-import { CalendarIcon, HomeIcon, LogOutIcon, MenuIcon } from "lucide-react";
-import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
-import { quickSearchOptions } from "../_constants/search";
-import { Avatar, AvatarImage } from "./ui/avatar";
-import Link from "next/link";
+import { MenuIcon } from "lucide-react";
+import { Sheet, SheetTrigger } from "./ui/sheet";
 import { SidebarSheet } from "./sidebar-sheet";
 
 export function Header () {

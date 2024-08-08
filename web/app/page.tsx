@@ -5,7 +5,6 @@ import { Input } from "./_components/ui/input";
 import Image from "next/image";
 import { BarbershopItem } from "./_components/barbershop-item";
 import { db } from "./_lib/prisma";
-import { Footer } from "./_components/footer";
 import { quickSearchOptions } from "./_constants/search";
 import { BookingItem } from "./_components/booking-item";
 
