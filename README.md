@@ -26,6 +26,7 @@ FSW5 - Barber
 - [Husky](https://github.com/typicode/husky#readme) - Git Hooks
 - [git-commit-msg-linter](https://www.npmjs.com/package/git-commit-msg-linter)
 - [NextAuth.js](https://next-auth.js.org/)
+- [Google Developer Console](https://console.cloud.google.com/)
 
 ## Project
 
