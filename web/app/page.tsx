@@ -8,6 +8,7 @@ import { db } from "./_lib/prisma";
 import { quickSearchOptions } from "./_constants/search";
 import { BookingItem } from "./_components/booking-item";
 import { Search } from "./_components/search";
+import Link from "next/link";
 
 export default async function Home() {
 
@@ -30,9 +31,11 @@ export default async function Home() {
         <div className="flex gap-3 overflow-x-scroll [&::-webkit-scrollbar]:hidden">
           {
             quickSearchOptions.map(option => (
-              <Button className="gap-2" variant="secondary" key={option.title}>
-                <Image src={option.imageUrl} alt={option.title} width={16} height={16} />
-                {option.title}
+              <Button className="gap-2" variant="secondary" key={option.title} asChild>
+                <Link href={`/barbershops?service=${option.title}`}>
+                  <Image src={option.imageUrl} alt={option.title} width={16} height={16} />
+                  {option.title}
+                </Link>
               </Button>
             ))
           }

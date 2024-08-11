@@ -92,10 +92,14 @@ export function SidebarSheet() {
       <div className="flex flex-col gap-4 p-5 border-b border-solid">
         {
           quickSearchOptions.map((option) => (
-            <Button key={option.title} className="justify-start gap-2" variant="ghost">
-              <Image src={option.imageUrl} alt={option.title} width={18} height={18} />
-              {option.title}
-            </Button>
+            <SheetClose key={option.title} asChild>
+              <Button className="justify-start gap-2" variant="ghost" asChild>
+                <Link href={`/barbershops?service=${option.title}`}>
+                  <Image src={option.imageUrl} alt={option.title} width={18} height={18} />
+                  {option.title}
+                </Link>
+              </Button>
+            </SheetClose>
           ))
         }
       </div>
