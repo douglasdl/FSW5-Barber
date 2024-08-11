@@ -7,6 +7,7 @@ import { BarbershopItem } from "./_components/barbershop-item";
 import { db } from "./_lib/prisma";
 import { quickSearchOptions } from "./_constants/search";
 import { BookingItem } from "./_components/booking-item";
+import { Search } from "./_components/search";
 
 export default async function Home() {
 
@@ -24,12 +25,7 @@ export default async function Home() {
         <h2 className="text-xl font-bold">Olá, Douglas!</h2>
         <p>Segunda-feira, 05 de agosto</p>
 
-        <div className="flex items-center gap-2">
-          <Input placeholder="Buscar" />
-          <Button>
-            <SearchIcon />
-          </Button>
-        </div>
+        <Search />
 
         <div className="flex gap-3 overflow-x-scroll [&::-webkit-scrollbar]:hidden">
           {

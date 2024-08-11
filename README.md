@@ -27,6 +27,7 @@ FSW5 - Barber
 - [git-commit-msg-linter](https://www.npmjs.com/package/git-commit-msg-linter)
 - [NextAuth.js](https://next-auth.js.org/)
 - [Google Developer Console](https://console.cloud.google.com/)
+- [React Hook Form](https://react-hook-form.com/)
 
 ## Project
 
@@ -90,6 +91,7 @@ npx shadcn-ui@latest add avatar
 npx shadcn-ui@latest add sonner
 npx shadcn-ui@latest add sheet
 npx shadcn-ui@latest add dialog
+npx shadcn-ui@latest add form
 ```
 
 Create the Husky setup:
@@ -124,7 +126,7 @@ npm run dev
 <!-- https://www.youtube.com/watch?app=desktop&v=aIWSXdFggJQ -->
 
 ### Part 4
-<!--  -->
+<!-- https://m.youtube.com/watch?v=WpmD7Zh-4jY -->
 
 ### Part 5
-<!--  -->
+<!-- https://m.youtube.com/playlist?list=PLm-VCNNTu3Lkx9pkUW-8SAdMfQn7WiqA1 -->
