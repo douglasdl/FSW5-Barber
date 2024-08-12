@@ -1,5 +1,6 @@
 import { Heading } from "@/app/_components/heading"
 import { PhoneItem } from "@/app/_components/phone-item"
+import { Phones } from "@/app/_components/phones"
 import { ServiceItem } from "@/app/_components/service-item"
 import { SidebarSheet } from "@/app/_components/sidebar-sheet"
 import { Button } from "@/app/_components/ui/button"
@@ -95,16 +96,9 @@ export default async function BarbershopPage({ params }: BarbershopPageProps) {
           </div>
         </div>
 
-        <div className="border-b border-solid p-5 space-y-3">
+        <div className="border-b border-solid p-5">
           <Heading title="Contato" />
-          {
-            barbershop.phones.map((phone) => (
-              <PhoneItem 
-                key={phone}
-                phone={phone}
-              />
-            ))
-          }
+          <Phones phones={barbershop.phones} />
         </div>
     </div>
   )

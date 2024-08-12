@@ -4,7 +4,7 @@ import { SmartphoneIcon } from "lucide-react"
 import { Button } from "./ui/button"
 import { toast } from "sonner";
 
-interface PhoneItemProps {
+export interface PhoneItemProps {
   phone: string
 }
 
