@@ -87,6 +87,7 @@ export default async function BarbershopPage({ params }: BarbershopPageProps) {
                 <ServiceItem 
                   key={service.id}
                   service={service}
+                  barbershop={barbershop}
                 />
               ))
             }
