@@ -6,8 +6,8 @@ import { SheetClose, SheetContent, SheetHeader, SheetTitle } from "./ui/sheet";
 import Link from "next/link";
 import Image from "next/image";
 import { quickSearchOptions } from "../_constants/search";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
-import { signIn, signOut, useSession } from "next-auth/react";
+import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
+import { signOut, useSession } from "next-auth/react";
 import { Avatar, AvatarImage } from "./ui/avatar";
 import { SignInDialog } from "./sign-in-dialog";
 
@@ -91,12 +91,16 @@ export function SidebarSheet() {
         }
       </div>
 
-      <div className="flex flex-col gap-4 p-5">
-        <Button className="justify-start gap-2" variant="ghost" onClick={handleLogoutClick}>
-          <LogOutIcon size={18} />
-          Sair da Conta
-        </Button>
-      </div>
+      {
+        data?.user && (
+          <div className="flex flex-col gap-4 p-5">
+            <Button className="justify-start gap-2" variant="ghost" onClick={handleLogoutClick}>
+              <LogOutIcon size={18} />
+              Sair da Conta
+            </Button>
+          </div>
+        )
+      }
     </SheetContent>
   )
 }
