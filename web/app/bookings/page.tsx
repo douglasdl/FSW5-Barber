@@ -59,29 +59,41 @@ export default async function Bookings() {
       <div className="flex flex-col p-5">
         <h1 className="text-xl font-bold mb-4">Agendamentos</h1>
 
-        <Heading title="Confirmados" />
-        <section className="flex flex-col gap-3 mb-4">
-          {
-            confirmedBookings.map((booking) => (
-              <BookingItem 
-                key={booking.id} 
-                booking={booking}
-              />
-            ))
-          }
-        </section>
+        {
+          confirmedBookings.length > 0 && (
+            <>
+              <Heading title="Confirmados" />
+              <section className="flex flex-col gap-3 mb-4">
+                {
+                  confirmedBookings.map((booking) => (
+                    <BookingItem 
+                      key={booking.id} 
+                      booking={booking}
+                    />
+                  ))
+                }
+              </section>
+            </>
+          )
+        }
 
-        <Heading title="Realizados" />
-        <section className="flex flex-col gap-3 mb-4">
-          {
-            concludedBookings.map((booking) => (
-              <BookingItem 
-                key={booking.id} 
-                booking={booking}
-              />
-            ))
-          }
-        </section>
+        {
+          concludedBookings.length > 0 && (
+            <>
+              <Heading title="Realizados" />
+              <section className="flex flex-col gap-3 mb-4">
+                {
+                  concludedBookings.map((booking) => (
+                    <BookingItem 
+                      key={booking.id} 
+                      booking={booking}
+                    />
+                  ))
+                }
+              </section>
+            </>
+          )
+        }
       </div>
     </>
   )

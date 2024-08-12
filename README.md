@@ -93,6 +93,12 @@ npx shadcn-ui@latest add sheet
 npx shadcn-ui@latest add dialog
 npx shadcn-ui@latest add form
 npx shadcn-ui@latest add calendar
+npx shadcn-ui@latest add alert-dialog
+```
+
+Uninstall Components:
+```sh
+npm remove shadcn-ui/alert-dialog 
 ```
 
 Create the Husky setup:
