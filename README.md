@@ -108,7 +108,8 @@ npm run dev
 
 ## Contents
 
-### Part 0
+### Part 0 - Project Setup
+<!-- https://www.youtube.com/watch?v=XRMvPCfh2U0 -->
 
 - [x] Database setup
 - [x] Database seeding
@@ -117,17 +118,20 @@ npm run dev
 - [x] Shadcn
 - [x] Git hooks
 
-### Part 1
-<!-- https://www.youtube.com/watch?app=desktop&v=moVcvu-P4vM -->
+### Part 1 - Home Page
+<!-- https://www.youtube.com/watch?v=moVcvu-P4vM -->
 
-### Part 2
-<!-- https://www.youtube.com/watch?app=desktop&v=hFPecJrEQIY -->
+### Part 2 - Barbershop Details Page
+<!-- https://www.youtube.com/watch?v=hFPecJrEQIY -->
 
-### Part 3
-<!-- https://www.youtube.com/watch?app=desktop&v=aIWSXdFggJQ -->
+### Part 3 - Login with Google
+<!-- https://www.youtube.com/watch?v=aIWSXdFggJQ -->
 
-### Part 4
-<!-- https://m.youtube.com/watch?v=WpmD7Zh-4jY -->
+### Part 4 - Barbershop Booking
+<!-- https://www.youtube.com/watch?v=WpmD7Zh-4jY -->
 
-### Part 5
-<!-- https://m.youtube.com/playlist?list=PLm-VCNNTu3Lkx9pkUW-8SAdMfQn7WiqA1 -->
+### Part 5 - Bookings Page
+<!-- https://www.youtube.com/watch?v=5r6V0-Zc7Fo&list=PLm-VCNNTu3Lkx9pkUW-8SAdMfQn7WiqA1&index=6 -->
+
+### Part 6 - Deploy and Review
+<!--  -->

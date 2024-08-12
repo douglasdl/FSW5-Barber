@@ -1,5 +1,6 @@
 import { BarbershopItem } from "../_components/barbershop-item"
 import { Header } from "../_components/header"
+import { Heading } from "../_components/heading"
 import { Search } from "../_components/search"
 import { db } from "../_lib/prisma"
 
@@ -45,7 +46,7 @@ export default async function BarbershopsPage({ searchParams }: BarbershopsPageP
       <div className="flex flex-col p-5 gap-6">
         <Search />
       
-        <h2 className="uppercase text-xs font-bold text-gray-400 mb-3">Resultados para &quot;{searchParams?.title || searchParams?.service}&quot;</h2>
+        <Heading title={`Resultados para ${searchParams?.title || searchParams?.service}`} />
 
         <div className="grid grid-cols-2 gap-4">
           {barbershops.map((barbershop) => (

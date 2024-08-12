@@ -51,6 +51,8 @@ function getTimeList(bookings: Booking[]) {
     const hours = Number(time.split(":")[0]);
     const minutes = Number(time.split(":")[1]);
 
+    // TODO: remove past hours from today
+
     const hasBookingOnCurrentTime = bookings.some(
       (booking) => 
         booking.date.getHours() === hours && 

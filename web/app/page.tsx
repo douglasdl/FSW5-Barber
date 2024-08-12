@@ -1,7 +1,5 @@
-import { SearchIcon } from "lucide-react";
 import { Header } from "./_components/header";
 import { Button } from "./_components/ui/button";
-import { Input } from "./_components/ui/input";
 import Image from "next/image";
 import { BarbershopItem } from "./_components/barbershop-item";
 import { db } from "./_lib/prisma";
@@ -9,8 +7,17 @@ import { quickSearchOptions } from "./_constants/search";
 import { BookingItem } from "./_components/booking-item";
 import { Search } from "./_components/search";
 import Link from "next/link";
+import { getServerSession } from "next-auth";
+import { authOptions } from "./_lib/auth";
+import { Heading } from "./_components/heading";
 
 export default async function Home() {
+
+  const session = await getServerSession(authOptions)
+  if(!session?.user) {
+    // TODO show login popup
+    // return notFound();
+  }
 
   const barbershops = await db.barbershop.findMany({});
   const popularBarbershops = await db.barbershop.findMany({
@@ -18,6 +25,21 @@ export default async function Home() {
       name: "desc"
     }
   });
+  // userId: (session?.user as any).id
+  const bookings = !session?.user 
+    ? await db.booking.findMany({
+      where: {
+        userId: "clzmetgrs0001immc3pepmw80"
+      },
+      include: {
+        service: {
+          include: {
+            barbershop: true
+          }
+        }
+      }
+    })
+    : []
 
   return (
     <div>
@@ -45,10 +67,22 @@ export default async function Home() {
           <Image src="/banner-01.png" alt="Banner" fill className="object-cover rounded-xl" />
         </div>
 
-        <BookingItem />
+        <section>
+          <Heading title="Agendamentos" />
+          <div className="flex overflow-x-auto gap-4 [&::-webkit-scrollbar]:hidden">
+            {
+              bookings.map((booking) => (
+                <BookingItem 
+                  key={booking.id}
+                  booking={booking}
+                />
+              ))
+            }
+          </div>
+        </section>  
 
         <section>
-          <h2 className="uppercase text-xs font-bold text-gray-400 mb-3">Recomendados</h2>
+          <Heading title="Recomendados" />
           <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden">
             {
               barbershops.map((barbershop) => (
@@ -59,7 +93,7 @@ export default async function Home() {
         </section>
         
         <section>
-          <h2 className="uppercase text-xs font-bold text-gray-400 mb-3">Populares</h2>
+          <Heading title="Populares" />
           <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden">
             {
               popularBarbershops.map((barbershop) => (
