@@ -100,9 +100,8 @@ export function ServiceItem({ service, barbershop }: ServiceItemProps) {
         minutes: minutes
       });
       
-      createBooking({
+      await createBooking({
         serviceId: service.id,
-        userId: (data?.user as any).id,
         date: newDate
       })
       handleBookingSheetOpenChange();
