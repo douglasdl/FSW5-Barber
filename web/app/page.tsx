@@ -26,10 +26,16 @@ export default async function Home() {
     }
   });
   // userId: (session?.user as any).id
-  const bookings = !session?.user 
+  const confirmedBookings = !session?.user 
     ? await db.booking.findMany({
       where: {
-        userId: "clzmetgrs0001immc3pepmw80"
+        userId: "clzmetgrs0001immc3pepmw80",
+        date: {
+          gte: new Date()
+        }
+      },
+      orderBy: {
+        date: "asc"
       },
       include: {
         service: {
@@ -71,7 +77,7 @@ export default async function Home() {
           <Heading title="Agendamentos" />
           <div className="flex overflow-x-auto gap-4 [&::-webkit-scrollbar]:hidden">
             {
-              bookings.map((booking) => (
+              confirmedBookings.map((booking) => (
                 <BookingItem 
                   key={booking.id}
                   booking={booking}

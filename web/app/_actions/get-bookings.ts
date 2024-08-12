@@ -15,6 +15,9 @@ export async function getBookings({ date }: GetBookingProps) {
         lte: endOfDay(date),
         gte: startOfDay(date)
       }
+    },
+    orderBy: {
+      date: "asc"
     }
   })
 }
