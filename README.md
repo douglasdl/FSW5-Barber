@@ -28,6 +28,7 @@ FSW5 - Barber
 - [NextAuth.js](https://next-auth.js.org/)
 - [Google Developer Console](https://console.cloud.google.com/)
 - [React Hook Form](https://react-hook-form.com/)
+- [Date FNS](https://date-fns.org/)
 
 ## Project
 
