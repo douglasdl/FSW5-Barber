@@ -10,13 +10,12 @@ export default async function Bookings() {
   const session = await getServerSession(authOptions)
   if(!session?.user) {
     // TODO show login popup
-    // return notFound();
+    return notFound();
   }
 
-  // userId: (session?.user as any).id
   const confirmedBookings = await db.booking.findMany({
     where: {
-      userId: "clzmetgrs0001immc3pepmw80",
+      userId: (session?.user as any).id,
       date: {
         gte: new Date()
       }
@@ -35,7 +34,7 @@ export default async function Bookings() {
 
   const concludedBookings = await db.booking.findMany({
     where: {
-      userId: "clzmetgrs0001immc3pepmw80",
+      userId: (session?.user as any).id,
       date: {
         lt: new Date()
       }

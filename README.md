@@ -62,6 +62,11 @@ npx prisma migrate dev --name init_db
 npx prisma migrate dev --name add_auth_tables_google
 ```
 
+Generate the database table for production:
+```sh
+npx prisma migrate deploy
+```
+
 Seed the database:
 ```sh
 npx prisma db seed
@@ -77,6 +82,10 @@ Formar the Prisma schema:
 npx prisma format
 ```
 
+Generate the prisma client:
+```sh
+npx prisma generate
+```
 
 Setup the Chadcn in the project:
 ```sh
@@ -111,6 +120,11 @@ npx husky init
 Start the project:
 ```sh
 npm run dev
+```
+
+Build the project:
+```sh
+npm run build
 ```
 
 

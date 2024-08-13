@@ -7,7 +7,7 @@ import { Button } from "./ui/button"
 import { Sheet, SheetContent, SheetFooter, SheetHeader, SheetTitle } from "./ui/sheet"
 import { Calendar } from "./ui/calendar"
 import { ptBR } from 'date-fns/locale'
-import { addDays, format, isPast, isToday, set } from "date-fns"
+import { addDays, isPast, isToday, set } from "date-fns"
 import { useEffect, useMemo, useState } from "react"
 import { createBooking } from "../_actions/create-booking"
 import { useSession } from "next-auth/react"
