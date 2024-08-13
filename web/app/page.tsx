@@ -16,19 +16,14 @@ import { ptBR } from "date-fns/locale";
 export default async function Home() {
 
   const session = await getServerSession(authOptions)
-  if(!session?.user) {
-    // TODO show login popup
-    // return notFound();
-  }
-
   const barbershops = await db.barbershop.findMany({});
   const popularBarbershops = await db.barbershop.findMany({
     orderBy: {
       name: "desc"
     }
   });
-  // userId: (session?.user as any).id
-  const confirmedBookings = !session?.user 
+  
+  const confirmedBookings = (session?.user as any).id 
     ? await db.booking.findMany({
       where: {
         userId: "clzmetgrs0001immc3pepmw80",
@@ -96,19 +91,23 @@ export default async function Home() {
           <Image src="/banner-01.png" alt="Banner" fill className="object-cover rounded-xl" />
         </div>
 
-        <section>
-          <Heading title="Agendamentos" />
-          <div className="flex overflow-x-auto gap-4 [&::-webkit-scrollbar]:hidden">
-            {
-              confirmedBookings.map((booking) => (
-                <BookingItem 
-                  key={booking.id}
-                  booking={booking}
-                />
-              ))
-            }
-          </div>
-        </section>  
+        {
+          confirmedBookings.length > 0 && (
+            <section>
+              <Heading title="Agendamentos" />
+              <div className="flex overflow-x-auto gap-4 [&::-webkit-scrollbar]:hidden">
+                {
+                  confirmedBookings.map((booking) => (
+                    <BookingItem 
+                      key={booking.id}
+                      booking={booking}
+                    />
+                  ))
+                }
+              </div>
+            </section>  
+          )
+        }
 
         <section>
           <Heading title="Recomendados" />

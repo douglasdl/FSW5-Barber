@@ -1,6 +1,8 @@
 # FSW5-Barber
 FSW5 - Barber
 
+- View deployed project [here](https://fsw-5-barber-git-main-douglasdls-projects.vercel.app/).
+
 - [Figma](https://www.figma.com/design/P5gHjuDEyp0ADnhD6GapAF/FSW-5.0?node-id=0-1&t=zAKXkwvPEszaEcxu-0)
 
 ## Environment
