@@ -121,8 +121,7 @@ export function BookingItem({ booking }: BookingItemProps) {
           <div className="mt-3 mb-6">
             <BookingSummary 
               barbershop={barbershop}
-              selectedDay={booking.date}
-              selectedTime={format(booking.date, "hh:mm", { locale: ptBR })}
+              selectedDate={booking.date}
               service={booking.service}
             />
           </div>

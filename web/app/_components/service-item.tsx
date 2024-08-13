@@ -253,8 +253,7 @@ export function ServiceItem({ service, barbershop }: ServiceItemProps) {
                       <div className="py-5 px-4">
                         <BookingSummary 
                           barbershop={barbershop}
-                          selectedDay={selectedDay}
-                          selectedTime={selectedTime}
+                          selectedDate={selectedDay}
                           service={service}
                         />
                       </div>

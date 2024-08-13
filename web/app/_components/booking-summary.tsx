@@ -1,20 +1,15 @@
 import { format } from "date-fns";
 import { Card, CardContent } from "./ui/card";
 import { ptBR } from "date-fns/locale";
-import { BarbershopService } from "@prisma/client";
-
-interface BarbershopProps {
-  name: string
-}
+import { Barbershop, BarbershopService } from "@prisma/client";
 
 interface BookingSummaryProps {
-  service: BarbershopService
-  selectedDay: Date | undefined
-  selectedTime: string | undefined
-  barbershop: BarbershopProps
+  service: Pick<BarbershopService, "name" | "price">
+  barbershop: Pick<Barbershop, "name">
+  selectedDate: Date
 }
 
-export function BookingSummary({ service, selectedDay, selectedTime, barbershop  }: BookingSummaryProps) {
+export function BookingSummary({ service, selectedDate, barbershop  }: BookingSummaryProps) {
   return (
     <Card>
       <CardContent className="p-3">
@@ -33,7 +28,7 @@ export function BookingSummary({ service, selectedDay, selectedTime, barbershop 
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-gray-400">Data</h2>
           <p className="text-sm">
-            {format(selectedDay, "d 'de' MMMM", {
+            {format(selectedDate, "d 'de' MMMM", {
               locale: ptBR,
             })}
           </p>
@@ -41,7 +36,7 @@ export function BookingSummary({ service, selectedDay, selectedTime, barbershop 
 
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-gray-400">Horário</h2>
-          <p className="text-sm">{selectedTime}</p>
+          <p className="text-sm">{format(selectedDate, "HH:mm")}</p>
         </div>
 
         <div className="flex items-center justify-between">
