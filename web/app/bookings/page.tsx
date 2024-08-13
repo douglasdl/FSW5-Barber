@@ -59,6 +59,14 @@ export default async function Bookings() {
         <h1 className="text-xl font-bold mb-4">Agendamentos</h1>
 
         {
+          confirmedBookings.length === 0 && concludedBookings.length  === 0 && (
+            <p className="text-gray-400">
+              Você não tem agendamentos.
+            </p>
+          )
+        }
+
+        {
           confirmedBookings.length > 0 && (
             <>
               <Heading title="Confirmados" />
