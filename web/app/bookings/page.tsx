@@ -67,7 +67,7 @@ export default async function Bookings() {
                   confirmedBookings.map((booking) => (
                     <BookingItem 
                       key={booking.id} 
-                      booking={booking}
+                      booking={JSON.parse(JSON.stringify(booking))}
                     />
                   ))
                 }
@@ -85,7 +85,7 @@ export default async function Bookings() {
                   concludedBookings.map((booking) => (
                     <BookingItem 
                       key={booking.id} 
-                      booking={booking}
+                      booking={JSON.parse(JSON.stringify(booking))}
                     />
                   ))
                 }

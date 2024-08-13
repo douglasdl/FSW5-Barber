@@ -100,7 +100,7 @@ export default async function Home() {
                   confirmedBookings.map((booking) => (
                     <BookingItem 
                       key={booking.id}
-                      booking={booking}
+                      booking={JSON.parse(JSON.stringify(booking))}
                     />
                   ))
                 }
