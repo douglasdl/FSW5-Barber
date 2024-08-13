@@ -29,6 +29,7 @@ FSW5 - Barber
 - [Google Developer Console](https://console.cloud.google.com/)
 - [React Hook Form](https://react-hook-form.com/)
 - [Date FNS](https://date-fns.org/)
+- [Vercel](https://vercel.com/)
 
 ## Project
 
@@ -141,4 +142,4 @@ npm run dev
 <!-- https://www.youtube.com/watch?v=5r6V0-Zc7Fo&list=PLm-VCNNTu3Lkx9pkUW-8SAdMfQn7WiqA1&index=6 -->
 
 ### Part 6 - Deploy and Review
-<!--  -->
+<!-- https://www.youtube.com/watch?v=vxPANRFJSO8 -->
