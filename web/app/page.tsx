@@ -10,8 +10,8 @@ import Link from "next/link";
 import { getServerSession } from "next-auth";
 import { authOptions } from "./_lib/auth";
 import { Heading } from "./_components/heading";
-import { format } from "date-fns";
-import { ptBR } from "date-fns/locale";
+import { getConfirmedBookings } from "./_data/get-confirmed-bookings"
+import { Greetings } from "./_components/greetings";
 
 export default async function Home() {
 
@@ -22,56 +22,17 @@ export default async function Home() {
       name: "desc"
     }
   });
+  const confirmedBookings = await getConfirmedBookings()
   
-  const confirmedBookings = (session?.user as any).id 
-    ? await db.booking.findMany({
-      where: {
-        userId: "clzmetgrs0001immc3pepmw80",
-        date: {
-          gte: new Date()
-        }
-      },
-      orderBy: {
-        date: "asc"
-      },
-      include: {
-        service: {
-          include: {
-            barbershop: true
-          }
-        }
-      }
-    })
-    : []
   
-  function getFormattedDate(): string {
-    const now = new Date();
-    
-    // Format the day and month names
-    const day = format(now, "EEE, dd", { locale: ptBR });
-    const month = format(now, "MMMM", { locale: ptBR });
-    
-    // Capitalize the first letter of the day and month
-    const capitalize = (str: string): string => str.charAt(0).toUpperCase() + str.slice(1);
-  
-    // Return the formatted string with "de" in lowercase
-    return `${capitalize(day)} de ${capitalize(month)}`;
-  }
     
   return (
     <div>
       <Header />
       <div className="flex flex-col p-5 gap-6">
-        <div className="flex flex-col gap-1">
-          <h2 className="text-xl">
-            Olá,&nbsp;
-            <span className="font-bold">{session?.user ? session.user.name : "Faça seu Login!"}</span>
-          </h2>
-          <p>
-            <span>{ getFormattedDate() }</span>
-          </p>
-        </div>
-
+        
+        <Greetings session={session} />
+        
         <Search />
 
         <div className="flex gap-3 overflow-x-scroll [&::-webkit-scrollbar]:hidden">
