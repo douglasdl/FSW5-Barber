@@ -1,17 +1,15 @@
 import { Header } from "./_components/header";
-import { Button } from "./_components/ui/button";
 import Image from "next/image";
 import { BarbershopItem } from "./_components/barbershop-item";
 import { db } from "./_lib/prisma";
-import { quickSearchOptions } from "./_constants/search";
 import { BookingItem } from "./_components/booking-item";
 import { Search } from "./_components/search";
-import Link from "next/link";
 import { getServerSession } from "next-auth";
 import { authOptions } from "./_lib/auth";
 import { Heading } from "./_components/heading";
 import { getConfirmedBookings } from "./_data/get-confirmed-bookings"
 import { Greetings } from "./_components/greetings";
+import { QuickSearchButtons } from "./_components/quick-search-buttons";
 
 export default async function Home() {
 
@@ -35,18 +33,7 @@ export default async function Home() {
         
         <Search />
 
-        <div className="flex gap-3 overflow-x-scroll [&::-webkit-scrollbar]:hidden">
-          {
-            quickSearchOptions.map(option => (
-              <Button className="gap-2" variant="secondary" key={option.title} asChild>
-                <Link href={`/barbershops?service=${option.title}`}>
-                  <Image src={option.imageUrl} alt={option.title} width={16} height={16} />
-                  {option.title}
-                </Link>
-              </Button>
-            ))
-          }
-        </div>
+        <QuickSearchButtons />
 
         <div className="relative w-full h-[150px]">
           <Image src="/banner-01.png" alt="Banner" fill className="object-cover rounded-xl" />
