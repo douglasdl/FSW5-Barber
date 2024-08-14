@@ -16,7 +16,7 @@ import { getBookings } from "../_actions/get-bookings"
 import { Dialog, DialogContent } from "./ui/dialog"
 import { SignInDialog } from "./sign-in-dialog"
 import { BookingSummary } from "./booking-summary"
-import { useRouter } from "next/router"
+import { useRouter } from "next/navigation"
 
 const TIME_LIST = [
   "08:00",
