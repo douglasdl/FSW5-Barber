@@ -1,7 +1,6 @@
 import { getServerSession } from "next-auth";
 import { Header } from "../_components/header";
 import { authOptions } from "../_lib/auth";
-import { db } from "../_lib/prisma";
 import { notFound } from "next/navigation";
 import { BookingItem } from "../_components/booking-item";
 import { Heading } from "../_components/heading";

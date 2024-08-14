@@ -1,7 +1,6 @@
 import { Header } from "./_components/header";
 import Image from "next/image";
 import { BarbershopItem } from "./_components/barbershop-item";
-import { db } from "./_lib/prisma";
 import { BookingItem } from "./_components/booking-item";
 import { Search } from "./_components/search";
 import { getServerSession } from "next-auth";
@@ -10,16 +9,14 @@ import { Heading } from "./_components/heading";
 import { getConfirmedBookings } from "./_data/get-confirmed-bookings"
 import { Greetings } from "./_components/greetings";
 import { QuickSearchButtons } from "./_components/quick-search-buttons";
+import { getPopularBarbershops } from "./_actions/get-popular-barbershops";
+import { getBarbershops } from "./_actions/get-barbershops";
 
 export default async function Home() {
 
   const session = await getServerSession(authOptions)
-  const barbershops = await db.barbershop.findMany({});
-  const popularBarbershops = await db.barbershop.findMany({
-    orderBy: {
-      name: "desc"
-    }
-  });
+  const barbershops = await getBarbershops()
+  const popularBarbershops = await getPopularBarbershops()
   const confirmedBookings = await getConfirmedBookings()
   
   return (

@@ -1,10 +1,10 @@
+import { getBarbershop } from "@/app/_actions/get-barbershop"
 import { Heading } from "@/app/_components/heading"
 import { Phones } from "@/app/_components/phones"
 import { ServiceItem } from "@/app/_components/service-item"
 import { SidebarSheet } from "@/app/_components/sidebar-sheet"
 import { Button } from "@/app/_components/ui/button"
 import { Sheet, SheetTrigger } from "@/app/_components/ui/sheet"
-import { db } from "@/app/_lib/prisma"
 import { ChevronsLeftIcon, MapPinIcon, MenuIcon, StarIcon } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -18,14 +18,7 @@ interface BarbershopPageProps {
 
 export default async function BarbershopPage({ params }: BarbershopPageProps) {
   
-  const barbershop = await db.barbershop.findUnique({
-    where: {
-      id: params.id
-    },
-    include: {
-      services: true
-    }
-  })
+  const barbershop = await getBarbershop({ params })
 
   if(!barbershop) {
     return notFound()
