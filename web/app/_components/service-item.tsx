@@ -17,12 +17,6 @@ import { Dialog, DialogContent } from "./ui/dialog"
 import { SignInDialog } from "./sign-in-dialog"
 import { BookingSummary } from "./booking-summary"
 
-
-interface ServiceItemProps {
-  service: BarbershopService
-  barbershop: Pick<Barbershop, "name">
-}
-
 const TIME_LIST = [
   "08:00",
   "08:30",
@@ -46,6 +40,11 @@ const TIME_LIST = [
   "17:30",
   "18:00",
 ]
+
+interface ServiceItemProps {
+  service: BarbershopService
+  barbershop: Pick<Barbershop, "name">
+}
 
 interface GetTimeListProps {
   bookings: Booking[]
@@ -102,18 +101,11 @@ export function ServiceItem({ service, barbershop }: ServiceItemProps) {
 
   async function handleCreateBooking() {
     try {
-      if(!selectedDay || !selectedTime) return
-  
-      const hours = Number(selectedTime.split(":")[0])
-      const minutes = Number(selectedTime.split(":")[1])
-      const newDate = set(selectedDay, {
-        hours: hours,
-        minutes: minutes
-      });
-      
+      if(!selectedDate) return
+
       await createBooking({
         serviceId: service.id,
-        date: newDate
+        date: selectedDate
       })
       handleBookingSheetOpenChange();
       toast.success("Reserva criada com sucesso!")
@@ -137,6 +129,14 @@ export function ServiceItem({ service, barbershop }: ServiceItemProps) {
       selectedDay
     })
   }, [dayBookings, selectedDay])
+
+  const selectedDate = useMemo(() => {
+    if (!selectedDay || !selectedTime) return
+    return set(selectedDay, {
+      hours: Number(selectedTime?.split(":")[0]),
+      minutes: Number(selectedTime?.split(":")[1]),
+    })
+  }, [selectedDay, selectedTime])
 
   useEffect(() => {
     const fetch = async () => {
@@ -249,11 +249,11 @@ export function ServiceItem({ service, barbershop }: ServiceItemProps) {
                   }
 
                   {
-                    selectedTime && selectedDay && (
+                    selectedDate && (
                       <div className="py-5 px-4">
                         <BookingSummary 
                           barbershop={barbershop}
-                          selectedDate={selectedDay}
+                          selectedDate={selectedDate}
                           service={service}
                         />
                       </div>

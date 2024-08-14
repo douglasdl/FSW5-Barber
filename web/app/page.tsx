@@ -22,8 +22,6 @@ export default async function Home() {
   });
   const confirmedBookings = await getConfirmedBookings()
   
-  
-    
   return (
     <div>
       <Header />
