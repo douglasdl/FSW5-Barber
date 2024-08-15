@@ -1,4 +1,4 @@
-import { getBarbershop } from "@/app/_actions/get-barbershop"
+import { getBarbershop } from "@/app/_data/get-barbershop"
 import { Heading } from "@/app/_components/heading"
 import { Phones } from "@/app/_components/phones"
 import { ServiceItem } from "@/app/_components/service-item"

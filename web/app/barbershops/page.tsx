@@ -1,4 +1,4 @@
-import { getFilteredBarbershops } from "../_actions/get-filtered-barbershops"
+import { getFilteredBarbershops } from "../_data/get-filtered-barbershops"
 import { BarbershopItem } from "../_components/barbershop-item"
 import { Header } from "../_components/header"
 import { Heading } from "../_components/heading"

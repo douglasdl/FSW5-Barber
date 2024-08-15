@@ -9,8 +9,8 @@ import { Heading } from "./_components/heading";
 import { getConfirmedBookings } from "./_data/get-confirmed-bookings"
 import { Greetings } from "./_components/greetings";
 import { QuickSearchButtons } from "./_components/quick-search-buttons";
-import { getPopularBarbershops } from "./_actions/get-popular-barbershops";
-import { getBarbershops } from "./_actions/get-barbershops";
+import { getPopularBarbershops } from "./_data/get-popular-barbershops";
+import { getBarbershops } from "./_data/get-barbershops";
 
 export default async function Home() {
 
