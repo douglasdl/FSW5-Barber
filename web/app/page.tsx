@@ -26,37 +26,40 @@ export default async function Home() {
   return (
     <div>
       <Header />
-      <div className="flex flex-col p-5 gap-6 lg:px-32">
-        
-        <Greetings session={session} />
-        
-        <Search />
+      <div className="flex relative p-5 gap-6 lg:gap-32 lg:px-32 bg-black">
+        <Image src="/background.png" alt="" fill className="object-cover absolute inset-0" />
+          
+        <div className="flex flex-col w-full lg:gap-12">
+          <Greetings session={session} />
+          
+          <Search />
 
-        <QuickSearchButtons />
+          <QuickSearchButtons />
 
-        <div className="relative w-full h-[150px] lg:hidden">
-          <Image src="/banner-01.png" alt="Banner" fill className="object-cover rounded-xl" />
+          <div className="relative w-full h-[150px] lg:hidden">
+            <Image src="/banner-01.png" alt="Banner" fill className="object-cover rounded-xl" />
+          </div>
+
+          {
+            confirmedBookings.length > 0 && (
+              <section className="lg:relative">
+                <Heading title="Agendamentos" />
+                <div className="flex overflow-x-auto gap-4 [&::-webkit-scrollbar]:hidden">
+                  {
+                    confirmedBookings.map((booking) => (
+                      <BookingItem 
+                        key={booking.id}
+                        booking={JSON.parse(JSON.stringify(booking))}
+                      />
+                    ))
+                  }
+                </div>
+              </section>  
+            )
+          }
         </div>
-
-        {
-          confirmedBookings.length > 0 && (
-            <section className="lg:relative">
-              <Heading title="Agendamentos" />
-              <div className="flex overflow-x-auto gap-4 [&::-webkit-scrollbar]:hidden">
-                {
-                  confirmedBookings.map((booking) => (
-                    <BookingItem 
-                      key={booking.id}
-                      booking={JSON.parse(JSON.stringify(booking))}
-                    />
-                  ))
-                }
-              </div>
-            </section>  
-          )
-        }
-
-        <section className="lg:relative">
+      
+        <section className="flex flex-col lg:relative w-1/2">
           <Heading title="Recomendados" />
           <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden">
             {
@@ -70,6 +73,11 @@ export default async function Home() {
             <ChevronRightIcon size={48} />
           </Button>
         </section>
+      </div>
+      <div className="flex flex-col p-5 gap-6 lg:px-32">
+        
+
+
         
         <section className="lg:relative">
           <Heading title="Populares" />
@@ -86,7 +94,7 @@ export default async function Home() {
           </Button>
         </section>
 
-        <section className="lg:relative">
+        <section className="lg:relative lg:mb-24">
           <Heading title="Mais Visitados" />
           <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden">
             {
