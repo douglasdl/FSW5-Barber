@@ -6,23 +6,27 @@ import { Search } from "./_components/search";
 import { getServerSession } from "next-auth";
 import { authOptions } from "./_lib/auth";
 import { Heading } from "./_components/heading";
-import { getConfirmedBookings } from "./_data/get-confirmed-bookings"
 import { Greetings } from "./_components/greetings";
 import { QuickSearchButtons } from "./_components/quick-search-buttons";
+import { Button } from "./_components/ui/button";
+import { ChevronRightIcon } from "lucide-react";
+import { getConfirmedBookings } from "./_data/get-confirmed-bookings"
 import { getPopularBarbershops } from "./_data/get-popular-barbershops";
 import { getBarbershops } from "./_data/get-barbershops";
+import { getMostVisitedBarbershops } from "./_data/get-most-visited-barbershops";
 
 export default async function Home() {
 
   const session = await getServerSession(authOptions)
   const barbershops = await getBarbershops()
   const popularBarbershops = await getPopularBarbershops()
+  const mostVisitedBarbershops = await getMostVisitedBarbershops()
   const confirmedBookings = await getConfirmedBookings()
   
   return (
     <div>
       <Header />
-      <div className="flex flex-col p-5 gap-6">
+      <div className="flex flex-col p-5 gap-6 lg:px-32">
         
         <Greetings session={session} />
         
@@ -30,13 +34,13 @@ export default async function Home() {
 
         <QuickSearchButtons />
 
-        <div className="relative w-full h-[150px]">
+        <div className="relative w-full h-[150px] lg:hidden">
           <Image src="/banner-01.png" alt="Banner" fill className="object-cover rounded-xl" />
         </div>
 
         {
           confirmedBookings.length > 0 && (
-            <section>
+            <section className="lg:relative">
               <Heading title="Agendamentos" />
               <div className="flex overflow-x-auto gap-4 [&::-webkit-scrollbar]:hidden">
                 {
@@ -52,7 +56,7 @@ export default async function Home() {
           )
         }
 
-        <section>
+        <section className="lg:relative">
           <Heading title="Recomendados" />
           <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden">
             {
@@ -61,9 +65,13 @@ export default async function Home() {
               ))
             }
           </div>
+
+          <Button className="lg:absolute lg:z-50 lg:-right-8 lg:top-36 lg:rounded-full lg:w-16 lg:h-16 lg:p-0" variant="outline">
+            <ChevronRightIcon size={48} />
+          </Button>
         </section>
         
-        <section>
+        <section className="lg:relative">
           <Heading title="Populares" />
           <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden">
             {
@@ -72,6 +80,25 @@ export default async function Home() {
               ))
             }
           </div>
+
+          <Button className="lg:absolute lg:z-50 lg:-right-8 lg:top-36 lg:rounded-full lg:w-16 lg:h-16 lg:p-0" variant="outline">
+            <ChevronRightIcon size={48} />
+          </Button>
+        </section>
+
+        <section className="lg:relative">
+          <Heading title="Mais Visitados" />
+          <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden">
+            {
+              mostVisitedBarbershops.map((barbershop) => (
+                <BarbershopItem key={barbershop.id} barbershop={barbershop} />
+              ))
+            }
+          </div>
+
+          <Button className="lg:absolute lg:z-50 lg:-right-8 lg:top-36 lg:rounded-full lg:w-16 lg:h-16 lg:p-0" variant="outline">
+            <ChevronRightIcon size={48} />
+          </Button>
         </section>
       </div>
     </div>

@@ -12,7 +12,7 @@ interface BarbershopItemProps {
 
 export function BarbershopItem({ barbershop }: BarbershopItemProps) {
   return (
-    <Card className="min-w-[159px] rounded-2xl">
+    <Card className="min-w-[159px] lg:min-w-[221px] rounded-2xl">
       <CardContent className="pb-0 px-1 pt-1">
         <div className="relative h-[159px] w-full p-4">
           <Image src={barbershop.imageUrl} alt={barbershop.name} fill className="object-cover rounded-2xl" />
@@ -23,8 +23,8 @@ export function BarbershopItem({ barbershop }: BarbershopItemProps) {
           </Badge>
         </div>
         <div className="p-3">
-          <h3 className="font-semibold truncate">{barbershop.name}</h3>
-          <p className="text-sm text-gray-400 truncate">{barbershop.address}</p>
+          <h3 className="font-semibold truncate lg:text-base">{barbershop.name}</h3>
+          <p className="text-sm lg:text-xs text-gray-400 truncate lg:whitespace-normal lg:overflow-visible lg:h-8">{barbershop.address}</p>
           <Button variant="secondary" className="mt-3 w-full" asChild>
             <Link href={`/barbershops/${barbershop.id}`}>
               Reservar

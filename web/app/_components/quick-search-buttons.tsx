@@ -5,7 +5,7 @@ import { quickSearchOptions } from "../_constants/search";
 
 export function QuickSearchButtons() {
   return (
-    <div className="flex gap-3 overflow-x-scroll [&::-webkit-scrollbar]:hidden">
+    <div className="flex lg:hidden gap-3 overflow-x-scroll [&::-webkit-scrollbar]:hidden">
       {
         quickSearchOptions.map(option => (
           <Button className="gap-2" variant="secondary" key={option.title} asChild>
