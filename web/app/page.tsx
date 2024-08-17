@@ -8,12 +8,11 @@ import { authOptions } from "./_lib/auth";
 import { Heading } from "./_components/heading";
 import { Greetings } from "./_components/greetings";
 import { QuickSearchButtons } from "./_components/quick-search-buttons";
-import { Button } from "./_components/ui/button";
-import { ChevronRightIcon } from "lucide-react";
 import { getConfirmedBookings } from "./_data/get-confirmed-bookings"
 import { getPopularBarbershops } from "./_data/get-popular-barbershops";
 import { getBarbershops } from "./_data/get-barbershops";
 import { getMostVisitedBarbershops } from "./_data/get-most-visited-barbershops";
+import { ScrollButton } from "./_components/scroll-button";
 
 export default async function Home() {
 
@@ -22,7 +21,7 @@ export default async function Home() {
   const popularBarbershops = await getPopularBarbershops()
   const mostVisitedBarbershops = await getMostVisitedBarbershops()
   const confirmedBookings = await getConfirmedBookings()
-  
+
   return (
     <div>
       <Header />
@@ -61,7 +60,10 @@ export default async function Home() {
       
         <section className="flex flex-col lg:relative w-1/2">
           <Heading title="Recomendados" />
-          <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden">
+          <div
+            id="recommended" 
+            className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden"
+          >
             {
               barbershops.map((barbershop) => (
                 <BarbershopItem key={barbershop.id} barbershop={barbershop} />
@@ -69,19 +71,24 @@ export default async function Home() {
             }
           </div>
 
-          <Button className="lg:absolute lg:z-50 lg:-right-8 lg:top-36 lg:rounded-full lg:w-16 lg:h-16 lg:p-0" variant="outline">
-            <ChevronRightIcon size={48} />
-          </Button>
+          <ScrollButton 
+            direction="left"
+            sessionId="recommended"
+          />
+
+          <ScrollButton 
+            direction="right"
+            sessionId="recommended"
+          />
         </section>
       </div>
       <div className="flex flex-col p-5 gap-6 lg:px-32">
         
-
-
-        
         <section className="lg:relative">
           <Heading title="Populares" />
-          <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden">
+          <div 
+            id="populars"
+            className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden">
             {
               popularBarbershops.map((barbershop) => (
                 <BarbershopItem key={barbershop.id} barbershop={barbershop} />
@@ -89,14 +96,23 @@ export default async function Home() {
             }
           </div>
 
-          <Button className="lg:absolute lg:z-50 lg:-right-8 lg:top-36 lg:rounded-full lg:w-16 lg:h-16 lg:p-0" variant="outline">
-            <ChevronRightIcon size={48} />
-          </Button>
+          <ScrollButton 
+            direction="left"
+            sessionId="populars"
+          />
+
+          <ScrollButton 
+            direction="right"
+            sessionId="populars"
+          />
         </section>
 
         <section className="lg:relative lg:mb-24">
           <Heading title="Mais Visitados" />
-          <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden">
+          <div 
+            id="most-visited"
+            className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden"
+          >
             {
               mostVisitedBarbershops.map((barbershop) => (
                 <BarbershopItem key={barbershop.id} barbershop={barbershop} />
@@ -104,9 +120,15 @@ export default async function Home() {
             }
           </div>
 
-          <Button className="lg:absolute lg:z-50 lg:-right-8 lg:top-36 lg:rounded-full lg:w-16 lg:h-16 lg:p-0" variant="outline">
-            <ChevronRightIcon size={48} />
-          </Button>
+          <ScrollButton 
+            direction="left"
+            sessionId="most-visited" 
+          />
+
+          <ScrollButton 
+            direction="right"
+            sessionId="most-visited" 
+          />
         </section>
       </div>
     </div>
