@@ -5,7 +5,7 @@ import { ServiceItem } from "@/app/_components/service-item"
 import { SidebarSheet } from "@/app/_components/sidebar-sheet"
 import { Button } from "@/app/_components/ui/button"
 import { Sheet, SheetTrigger } from "@/app/_components/ui/sheet"
-import { ChevronsLeftIcon, MapPinIcon, MenuIcon, StarIcon } from "lucide-react"
+import { ChevronLeftIcon, MapPinIcon, MenuIcon, StarIcon } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
@@ -41,7 +41,7 @@ export default async function BarbershopPage({ params }: BarbershopPageProps) {
           asChild
         >
           <Link href="/">
-            <ChevronsLeftIcon />
+            <ChevronLeftIcon />
           </Link>
         </Button>
 
