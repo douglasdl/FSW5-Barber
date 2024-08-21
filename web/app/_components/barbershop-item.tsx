@@ -12,7 +12,7 @@ interface BarbershopItemProps {
 
 export function BarbershopItem({ barbershop }: BarbershopItemProps) {
   return (
-    <Card className="min-w-[159px] lg:min-w-[221px] rounded-2xl">
+    <Card className="min-w-[159px] lg:min-w-[221px] lg:max-w-[221px] rounded-2xl">
       <CardContent className="pb-0 px-1 pt-1">
         <div className="relative h-[159px] w-full p-4">
           <Image src={barbershop.imageUrl} alt={barbershop.name} fill className="object-cover rounded-2xl" />

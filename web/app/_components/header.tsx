@@ -9,8 +9,13 @@ import { SidebarSheet } from "./sidebar-sheet";
 import Link from "next/link";
 import { Avatar, AvatarImage } from "./ui/avatar";
 import { useSession } from "next-auth/react";
+import { Search } from "./search";
 
-export function Header () {
+interface HeaderProps {
+  hasSearchBar?: boolean
+}
+
+export function Header ({ hasSearchBar = false }: HeaderProps) {
 
   const { data } = useSession();
 
@@ -31,6 +36,14 @@ export function Header () {
             <SidebarSheet />
           </Sheet>
         </div>
+
+        {
+          hasSearchBar && (
+            <div className="hidden lg:flex lg:w-full lg:ml-11 lg:mr-11">
+              <Search />
+            </div>
+          )
+        }
 
         <div className="hidden lg:flex lg:gap-6">
           <Button className="justify-start gap-2" variant="ghost" asChild>

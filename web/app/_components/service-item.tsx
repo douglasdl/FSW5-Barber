@@ -196,8 +196,8 @@ export function ServiceItem({ service, barbershop }: ServiceItemProps) {
                   </Button>
                 
                 <SheetContent className="px-0">
-                  <SheetHeader>
-                    <SheetTitle className="px-5">Fazer Reserva</SheetTitle>
+                  <SheetHeader className="lg:border-b lg:border-solid lg:flex lg:flex-row lg:pb-5">
+                    <SheetTitle className="px-5 lg:py-5">Fazer Reserva</SheetTitle>
                   </SheetHeader>
                   <div className="py-5 border-b border-solid">
                     <Calendar 
@@ -270,6 +270,7 @@ export function ServiceItem({ service, barbershop }: ServiceItemProps) {
                     <Button
                       onClick={handleCreateBooking}
                       disabled={!selectedDay || !selectedTime}
+                      className="lg:w-full"
                     >
                       Confirmar
                     </Button>
