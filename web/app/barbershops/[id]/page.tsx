@@ -72,7 +72,7 @@ export default async function BarbershopPage({ params }: BarbershopPageProps) {
               </div>
             </div>
 
-            <Card className="flex items-center gap-2 lg:flex-col lg:px-5 lg:py-3">
+            <Card className="flex items-center gap-2 lg:flex-col lg:px-5 lg:py-3 bg-transparent lg:border lg:bg-card border-transparent lg:border-border">
               <span className="flex items-center gap-2">
                 <StarIcon className="text-primary fill-primary" size={18} />
                 5,0
@@ -101,7 +101,7 @@ export default async function BarbershopPage({ params }: BarbershopPageProps) {
             </div>
           </div>
         </div>
-        <Card className="lg:w-1/3 rounded-2xl border-none p-5 lg:mr-32 lg:mt-10 lg:h-min">
+        <Card className="hidden lg:flex lg:flex-col lg:w-1/3 rounded-2xl border-none p-5 lg:mr-32 lg:mt-10 lg:h-min">
 
           <div>
             <BarbershopMap 
