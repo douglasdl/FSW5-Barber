@@ -23,12 +23,12 @@ export default async function Home() {
   const confirmedBookings = await getConfirmedBookings()
 
   return (
-    <div>
+    <div className="w-full">
       <Header />
-      <div className="flex relative p-5 gap-6 lg:gap-32 lg:px-32 bg-black">
+      <div className="flex lg:justify-between relative p-5 gap-6 lg:gap-32 lg:px-32 bg-black">
         <Image src="/background.png" alt="" fill className="object-cover absolute inset-0" />
           
-        <div className="flex flex-col w-full lg:gap-12">
+        <div className="flex flex-col w-full lg:gap-12 lg:w-1/3">
           <Greetings session={session} />
           
           <Search />
@@ -49,6 +49,7 @@ export default async function Home() {
                       <BookingItem 
                         key={booking.id}
                         booking={JSON.parse(JSON.stringify(booking))}
+                        isLargeScreen={true}
                       />
                     ))
                   }
@@ -58,7 +59,7 @@ export default async function Home() {
           }
         </div>
       
-        <section className="flex flex-col lg:relative w-1/2">
+        <section className="flex flex-col lg:relative lg:w-1/2">
           <Heading title="Recomendados" />
           <div
             id="recommended" 
