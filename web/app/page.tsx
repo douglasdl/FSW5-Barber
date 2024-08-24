@@ -25,10 +25,10 @@ export default async function Home() {
   return (
     <div className="w-full">
       <Header />
-      <div className="flex lg:justify-between relative p-5 gap-6 lg:gap-32 lg:px-32 bg-black">
-        <Image src="/background.png" alt="" fill className="object-cover absolute inset-0" />
+      <div className="flex lg:justify-between relative p-5 gap-6 lg:gap-32 lg:px-32 lg:bg-black">
+        <Image src="/background.png" alt="" fill className="hidden lg:block object-cover absolute inset-0" />
           
-        <div className="flex flex-col w-full lg:gap-12 lg:w-1/3">
+        <div className="flex flex-col w-full gap-6 lg:gap-12 lg:w-1/3">
           <Greetings session={session} />
           
           <Search />
@@ -59,7 +59,7 @@ export default async function Home() {
           }
         </div>
       
-        <section className="flex flex-col lg:relative lg:w-1/2">
+        <section className="hidden lg:flex lg:flex-col lg:relative lg:w-1/2">
           <Heading title="Recomendados" />
           <div
             id="recommended" 

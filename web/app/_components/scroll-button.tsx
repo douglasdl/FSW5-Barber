@@ -22,7 +22,7 @@ export function ScrollButton({ direction = "right", sessionId, scrollAmount = 23
 
   return (
     <Button 
-      className={`lg:absolute lg:z-50 lg:top-36 lg:rounded-full lg:w-16 lg:h-16 lg:p-0 ${directionStyles}`}
+      className={`hidden lg:flex lg:absolute lg:z-50 lg:top-36 lg:rounded-full lg:w-16 lg:h-16 lg:p-0 ${directionStyles}`}
       variant="outline"
       onClick={() => scrollHorizontally()}
     >
