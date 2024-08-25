@@ -18,7 +18,7 @@ FSW5 - Barber
 
 <br>
 <p align="center">
-    <a href="https://fsw-5-barber-git-main-douglasdls-projects.vercel.app/">
+    <a href="https://fsw-5-barber-git-main-douglasdls-projects.vercel.app/" target="_blank">
         <img alt="Barbershop" src="https://raw.githubusercontent.com/douglasdl/images/main/barbershop.png" width="100%">
     </a>
 </p>
