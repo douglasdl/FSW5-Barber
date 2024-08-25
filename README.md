@@ -18,8 +18,8 @@ FSW5 - Barber
 
 <br>
 <p align="center">
-    <a href="https://douglasdl.github.io/NLW1/">
-        <img alt="Ecoleta" src="https://douglasdl.github.io/images/Ecoleta.png" width="100%">
+    <a href="https://fsw-5-barber-git-main-douglasdls-projects.vercel.app/">
+        <img alt="Barbershop" src="https://douglasdl.github.io/images/Barbershop" width="100%">
     </a>
 </p>
 
@@ -267,9 +267,9 @@ This project was done using [Visual Studio Code](https://code.visualstudio.com/)
 }
 ```
 
-## 📝 [License](https://github.com/douglasdl/FSW5-Barber/blob/main/LICENSE)
+## 📝 License
 
-This project is under the MIT license. See the file [LICENSE](https://github.com/douglasdl/NLW1/blob/main/LICENSE) for more details.
+This project is under the MIT license. See the file [LICENSE](https://github.com/douglasdl/FSW5-Barber/blob/main/LICENSE) for more details.
 
 ---
 
