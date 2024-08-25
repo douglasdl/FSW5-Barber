@@ -30,8 +30,8 @@ export default async function Bookings() {
     <>
       <Header hasSearchBar />
 
-      <div className="flex p-5 lg:py-10 lg:px-64 lg:gap-10">
-        <div className="flex w-full lg:w-1/2 lg:flex-col gap-5 lg:gap-1">
+      <div className="lg:flex w-full p-5 lg:py-10 lg:px-64 lg:gap-10">
+        <div className="flex w-full lg:w-1/2 flex-col gap-5 lg:gap-1">
           <h1 className="text-xl font-bold mb-4 lg:mb-0 flex:mb-0">Agendamentos</h1>
           {
             confirmedBookings.length === 0 && concludedBookings.length  === 0 && (
@@ -43,7 +43,7 @@ export default async function Bookings() {
 
           {
             confirmedBookings.length > 0 && (
-              <>
+              <div className="hidden lg:flex lg:flex-col">
                 <Heading title="Confirmados" />
                 <section className="flex flex-col gap-3 mb-4">
                   {
@@ -56,14 +56,14 @@ export default async function Bookings() {
                     ))
                   }
                 </section>
-              </>
+              </div>
             )
           }
 
           {
             concludedBookings.length > 0 && (
-              <>
-                <Heading title="Realizados" />
+              <div className="hidden lg:flex lg:flex-col">
+                <Heading title="Finalizados" />
                 <section className="flex flex-col gap-3 mb-4">
                   {
                     concludedBookings.map((booking) => (
@@ -75,23 +75,47 @@ export default async function Bookings() {
                     ))
                   }
                 </section>
-              </>
+              </div>
             )
           }
         </div>
-        <div className="lg:hidden w-full">
-          <section className="flex flex-col gap-3">
-            {
-              confirmedBookings.concat(concludedBookings).map((booking) => (
-                <BookingItem 
-                  key={booking.id} 
-                  booking={booking} 
-                  isLargeScreen={false}
-                />
-              ))
-            }
-          </section>
-        </div>
+        {
+            confirmedBookings.length > 0 && (
+              <div className="flex flex-col lg:hidden">
+                <Heading title="Confirmados" />
+                <section className="flex flex-col gap-3 mb-4">
+                  {
+                    confirmedBookings.map((booking) => (
+                      <BookingItem 
+                        key={booking.id} 
+                        booking={booking} 
+                        isLargeScreen={false}
+                      />
+                    ))
+                  }
+                </section>
+              </div>
+            )
+          }
+
+        {
+            concludedBookings.length > 0 && (
+              <div className="flex flex-col lg:hidden">
+                <Heading title="Finalizados" />
+                <section className="flex flex-col gap-3 mb-4">
+                  {
+                    concludedBookings.map((booking) => (
+                      <BookingItem 
+                        key={booking.id} 
+                        booking={booking} 
+                        isLargeScreen={false}
+                      />
+                    ))
+                  }
+                </section>
+              </div>
+            )
+          }
 
         <div className="hidden lg:flex w-1/2 lg:mt-[76px]">
           <Card className="w-full p-5" id="booking-details-large-screens">
@@ -120,7 +144,7 @@ export default async function Bookings() {
                     <Phones phones={confirmedBookings[0].service.barbershop.phones} />
                     
                     <Badge className="w-fit" variant={isConfirmed ? "default" : "secondary"}>
-                      {isConfirmed ? "Confirmado" : "Realizado"}
+                      {isConfirmed ? "Confirmado" : "Finalizado"}
                     </Badge>
 
                     <div className="mt-3 mb-6">

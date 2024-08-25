@@ -69,7 +69,7 @@ export function BookingItem({ booking, isLargeScreen }: BookingItemProps) {
         <CardContent className="flex justify-between p-0">
           <div className="flex flex-col gap-2 py-5 pl-5">
             <Badge className="w-fit" variant={isConfirmed ? "default" : "secondary"}>
-              {isConfirmed ? "Confirmado" : "Realizado"}
+              {isConfirmed ? "Confirmado" : "Finalizado"}
             </Badge>
             <h3 className="font-semibold">{booking.service.name}</h3>
             <div className="flex items-center gap-2">
@@ -98,7 +98,7 @@ export function BookingItem({ booking, isLargeScreen }: BookingItemProps) {
           <CardContent className="flex justify-between p-0">
             <div className="flex flex-col gap-2 py-5 pl-5">
               <Badge className="w-fit" variant={isConfirmed ? "default" : "secondary"}>
-                {isConfirmed ? "Confirmado" : "Realizado"}
+                {isConfirmed ? "Confirmado" : "Finalizado"}
               </Badge>
               <h3 className="font-semibold">{booking.service.name}</h3>
               <div className="flex items-center gap-2">
@@ -132,7 +132,7 @@ export function BookingItem({ booking, isLargeScreen }: BookingItemProps) {
 
         <div>
           <Badge className="w-fit" variant={isConfirmed ? "default" : "secondary"}>
-            {isConfirmed ? "Confirmado" : "Realizado"}
+            {isConfirmed ? "Confirmado" : "Finalizado"}
           </Badge>
 
           <div className="mt-3 mb-6">
