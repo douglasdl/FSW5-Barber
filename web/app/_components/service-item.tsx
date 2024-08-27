@@ -171,16 +171,16 @@ export function ServiceItem({ service, barbershop }: ServiceItemProps) {
             />
           </div>
 
-          <div className="space-y-2">
+          <div className="space-y-2 w-full">
             <h3 className="font-semibold text-sm">{service.name}</h3>
             <p className="text-sm text-gray-400">{service.description}</p>
           
-            <div className="flex items-center justify-between">
-              <p className="text-sm font-bold text-primary">
+            <div className="flex items-center justify-between w-full">
+              <p className="text-sm font-bold text-primary w-full">
                 {
-                  Intl.NumberFormat("pt-BR", {
+                  Intl.NumberFormat("ja-JP", {
                     style: 'currency',
-                    currency: 'BRL'
+                    currency: 'JPY'
                   }).format(Number(service.price))
                 }
               </p>
